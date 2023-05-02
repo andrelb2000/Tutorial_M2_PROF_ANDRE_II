@@ -36,7 +36,8 @@ app.post('/insereUsuario', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); 
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
-	sql = "INSERT INTO usuario (nome_completo, email, telefone) VALUES ('" + req.body.nome + "', '" + req.body.email + "', " + req.body.telefone + ")";
+	sql = "INSERT INTO usuario (nome_completo, email, telefone) VALUES ('" + 
+	       req.body.nome + "', '" + req.body.email + "', " + req.body.telefone + ")";
 	console.log(sql);
 	db.run(sql, [],  err => {
 		if (err) {
