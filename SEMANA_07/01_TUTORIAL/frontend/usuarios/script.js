@@ -25,9 +25,10 @@ function TestGETDB(){
 
     var xhttp = new XMLHttpRequest();
     xhttp.open("GET", url, false);
-    xhttp.send();//A execução do script pára aqui até a requisição retornar do servidor
-
+    xhttp.send();
+    
     resposta = JSON.parse(xhttp.responseText);
-    $(getDBResDiv).append("<br /><br />" + JSON.stringify(resposta));
-     //console.log(xhttp.responseText);
+    $(getDBResDiv).append("<br /><br />" + 
+              JSON.stringify(resposta));
+    console.log(xhttp.responseText);
 }
